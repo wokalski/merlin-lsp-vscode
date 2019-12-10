@@ -1,23 +1,25 @@
 {
-	"name": "merlin-lsp-vscode",
-	"version": "1.0.0",
-	"description": "A VSCode plugin for OCaml and Reason editor integration via merlin-lsp",
-	"author": "Wojtek Czekalski <me@wczekalski.com>",
-	"license": "MIT",
-	"categories": [],
-	"engines": {
-		"vscode": "^1.33.0"
-	},
+  "name": "merlin-lsp-vscode",
+  "version": "1.0.0",
+  "description": "A VSCode plugin for OCaml and Reason editor integration via merlin-lsp",
+  "author": "Wojtek Czekalski <me@wczekalski.com>",
+  "publisher": "wokalski",
+  "repository": "https://github.com/wokalski/merlin-lsp-vscode.git",
+  "license": "MIT",
+  "categories": [],
+  "engines": {
+    "vscode": "^1.33.0"
+  },
   "scripts": {
     "build": "bsb -make-world",
     "watch": "bsb -make-world -w"
   },
-	"activationEvents": [
-		"onLanguage:reason",
-		"onLanguage:ocaml"
-	],
-	"main": "./src/Index.bs.js",
-	"contributes": {
+  "activationEvents": [
+    "onLanguage:reason",
+    "onLanguage:ocaml"
+  ],
+  "main": "./src/Index.bs.js",
+  "contributes": {
     "languages": [
       {
         "id": "reason",
@@ -60,9 +62,12 @@
       }
     ]
   },
-	"dependencies": {
-		"bs-platform": "^7.0.1",
-		"vscode": "^1.1.36",
-		"vscode-languageclient": "^5.2.1"
-	}
+  "dependencies": {
+    "bs-platform": "^7.0.1"
+  },
+  "devDependencies": {
+    "vscode": "^1.1.36",
+    "vscode-languageclient": "^5.2.1",
+    "vsce": "^1.71.0"
+  }
 }

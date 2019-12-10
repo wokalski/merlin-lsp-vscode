@@ -9,7 +9,18 @@ function activate(context) {
   return VsCode.MultiWorkspace.start(context, /* array */[], (function ($$document, folder) {
                 var match = Environment.serverOptionsForFolder($$document, folder);
                 if (match !== undefined) {
-                  return new VscodeLanguageclient.LanguageClient("vscode-reason", "Reason/OCaml Language Server Client for VSCode", match, undefined);
+                  return new VscodeLanguageclient.LanguageClient("wokalski.vscode-reason", "Reason/OCaml Language Server Client for VSCode", match, {
+                              documentSelector: /* array */[
+                                {
+                                  scheme: "file",
+                                  language: "ocaml"
+                                },
+                                {
+                                  scheme: "file",
+                                  language: "reason"
+                                }
+                              ]
+                            });
                 }
                 
               }));

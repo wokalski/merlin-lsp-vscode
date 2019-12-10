@@ -9,7 +9,14 @@ type serverOptions = {
   options: option(executableOptions),
 };
 
-type clientOptions;
+type documentSelectorItem = {
+  scheme: string,
+  language: string
+};
+
+type clientOptions = {
+  documentSelector: array(documentSelectorItem)
+};
 
 module LanguageClient = {
   type t = {

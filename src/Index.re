@@ -11,14 +11,19 @@ let activate = (context: VsCode.ExtensionContext.t) => {
     | Some(serverOptions) =>
       Some(
         LanguageClient.make(
-          ~id="vscode-reason",
+          ~id="wokalski.vscode-reason",
           ~name="Reason/OCaml Language Server Client for VSCode",
           ~serverOptions,
-          ~clientOptions=None,
+          ~clientOptions=
+            Some({
+              documentSelector: [|
+                {scheme: "file", language: "ocaml"},
+                {scheme: "file", language: "reason"},
+              |],
+            }),
         ),
       )
     | None => None
     }
   });
 };
-
