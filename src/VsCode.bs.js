@@ -67,14 +67,15 @@ function start(context, commands, createClient) {
           Vscode.commands.registerCommand(param[0], param[1]);
           return /* () */0;
         }));
-  return context.subscriptions.push({
-              dispose: (function () {
-                  Belt_HashMapString.forEach(workspaceFolders, (function (param, client) {
-                          return client.stop();
-                        }));
-                  return Belt_HashMapString.clear(workspaceFolders);
-                })
-            });
+  context.subscriptions.push({
+        dispose: (function () {
+            Belt_HashMapString.forEach(workspaceFolders, (function (param, client) {
+                    return client.stop();
+                  }));
+            return Belt_HashMapString.clear(workspaceFolders);
+          })
+      });
+  return /* () */0;
 }
 
 var MultiWorkspace = {

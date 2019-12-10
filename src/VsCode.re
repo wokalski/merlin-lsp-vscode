@@ -155,6 +155,7 @@ module MultiWorkspace = {
         },
         context.subscriptions,
       )
-    );
+    ) |> ignore;
+    ();
   };
 };
